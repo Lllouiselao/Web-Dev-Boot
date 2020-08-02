@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<title>Register Form</title>
+<body>
+    <h1>Register</h1>
+    <form action="http://www.google.com" method="GET">
+        <div>
+            <label for="firstname">First Name:</label>
+            <input id="firstname" type="text" placeholder="John" required>
+            <label for="lastname">Last Name:</label>
+            <input id="lastname" type="text" placeholder="Smith" required>
+        </div>
+        
+    
+        <div>
+            <label for="male">Male</label>
+            <input name="sexchoice" id="male" type="radio">
+            <label for="female">Female</label>
+            <input name="sexchoice" id="female" type="radio">
+            <label for="other">Other</label>
+            <input name="sexchoice" id="other" type="radio">
+        </div>
+        
+    
+        <div>
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="email" placeholder="your email" required>
+            <label for="password">Password:</label>
+            <input pattern=".{5,10}" required title="5 to 10 chars" name="password" id="password" type="password" placeholder="your password">
+        </div>
+        
+        <div>
+            <label for="Birthday">Birthday</label>
+        <select name="Month">
+            <option>Jan</option>
+            <option>Feb</option>
+            <option>Mar</option>
+        </select>
+        <select name="Day">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        <select name="Year">
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+        </select>
+        </div>
+        
+        <div>
+            <label for="condition">I agree to the terms and conditions</label>
+            <input name="condision" id="condition" type="checkbox" >
+        </div>
+    
+        
+    
+        <input type="submit">
+    </form>
+</body>

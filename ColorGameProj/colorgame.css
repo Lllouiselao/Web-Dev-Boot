@@ -1,0 +1,22 @@
+body{
+    background-color: #232323;
+}
+
+.square{
+    width: 30%;
+    background:green;
+    padding-bottom: 30%;
+    margin: 1.66%;
+    float: left;
+}
+
+#container{
+    /* this will help to max the 6 boxes*/
+    max-width: 500px;
+    /* this will help center the container martin:0 auto will help center left and right*/
+    margin: 0 auto; 
+}
+
+h1{
+    color: white;
+}

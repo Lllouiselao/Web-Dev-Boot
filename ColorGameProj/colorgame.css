@@ -1,5 +1,5 @@
 body{
-    background-color: #232323;
+    background-color:		#708090;
 }
 
 .square{
@@ -18,5 +18,9 @@ body{
 }
 
 h1{
-    color: white;
+    color:	#F0F8FF;
+}
+
+#prompt{
+    color: antiquewhite;
 }

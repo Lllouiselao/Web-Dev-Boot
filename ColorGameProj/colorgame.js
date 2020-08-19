@@ -1,5 +1,7 @@
+//help us to count how many colors we need
+var numSquares = 6
 //3/6 colors using random function to generate
-var colors = generateColor(6);
+var colors = generateColor(numSquares);
 //selet all the square class into squares
 var squares = document.querySelectorAll(".square");
 //the color we selected to guess
@@ -7,9 +9,77 @@ var colorPicked = randomColor();
 var colorDisplay = document.getElementById("colorDisplay");
 //thsi is for the guess prompt
 var guessPrompt = document.getElementById("prompt");
+//select the whole h1
+var h1 = document.querySelector("h1");
+//for the new game button
+var newgameButton = document.getElementById("newGame");
+//select the difficulty btn
+var easyMode = document.getElementById("easyMode");
+var hardMode = document.getElementById("hardMode");
 
+//
+easyMode.addEventListener("click", function(){
+    easyMode.classList.add("seleted");
+    hardMode.classList.remove("seleted");
+    h1.style.backgroundColor = "steelblue";
+    numSquares = 3;
+    //we need to generate new colors and it's easy mode 
+    //we only need 3 of them
+    colors = generateColor(numSquares);
+    //select a new random color 
+    colorPicked = randomColor();
+    //show the picked color on h1
+    colorDisplay.textContent = colorPicked;
+    //input the colors into the squares
+    for(var i = 0; i < squares.length; i++){
+        if(colors[i]){
+            squares[i].style.backgroundColor = colors[i];
+        }
+        else{
+            squares[i].style.display = "none";
+        }
+    }
+});
 
+hardMode.addEventListener("click", function(){
+    hardMode.classList.add("seleted");
+    easyMode.classList.remove("seleted");
+    h1.style.backgroundColor = "steelblue";
+    numSquares = 6;
+    colors = generateColor(numSquares);
+    //select a new random color 
+    colorPicked = randomColor();
+    //show the picked color on h1
+    colorDisplay.textContent = colorPicked;
+    //input the colors into the squares
+    for(var i = 0; i < squares.length; i++){
+            squares[i].style.backgroundColor = colors[i];
+            //let all the squares shows color
+            squares[i].style.display = "block";
+    }
+});
+
+//shows the picked color 
 colorDisplay.textContent = colorPicked;
+
+//if we want a new game 
+newgameButton.addEventListener("click", function(){
+    //generate new colors
+    colors = generateColor(numSquares);
+    //select a new random color 
+    colorPicked = randomColor();
+    //show the picked color on h1
+    colorDisplay.textContent = colorPicked;
+    //change colors to the 6 squares
+    for(var i = 0; i < squares.length; i++){
+        //add init color to all squares
+        squares[i].style.backgroundColor = colors[i];
+    }
+    //change the h1 background color to the normal 
+    h1.style.backgroundColor = "steelblue";
+    newgameButton.textContent = "New Colors";
+    guessPrompt.textContent = "";
+});
 
 for(var i = 0; i < squares.length; i++){
     //add init color to all squares
@@ -23,10 +93,13 @@ for(var i = 0; i < squares.length; i++){
         if(colorChoose === colorPicked){
             guessPrompt.textContent = "Correct!";
             changeColor(colorChoose);
+            h1.style.backgroundColor = colorPicked;
+            newgameButton.textContent = "Play Again";
+            
         }
         else{
-            this.style.backgroundColor = "#F0F8FF";
-            guessPrompt.textContent = "Try Again";
+            this.style.backgroundColor = "#708090";
+            guessPrompt.textContent = "Try Again?";
         }
     });
 }

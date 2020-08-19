@@ -1,5 +1,7 @@
 body{
     background-color:		#708090;
+    margin: 0;
+    font-family: "Avenir";
 }
 
 .square{
@@ -8,19 +10,70 @@ body{
     padding-bottom: 30%;
     margin: 1.66%;
     float: left;
+    border-radius: 20%;
+    transition: background 0.5s;
 }
 
 #container{
     /* this will help to max the 6 boxes*/
     max-width: 500px;
     /* this will help center the container martin:0 auto will help center left and right*/
-    margin: 0 auto; 
+    margin: 20px auto; 
 }
 
 h1{
     color:	#F0F8FF;
+    text-align: center;
+    background-color: steelblue;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding:20px 0;
+    line-height: 1.2;
+}
+
+#colorDisplay{
+    font-size:200%;
 }
 
 #prompt{
-    color: antiquewhite;
+    color: black;
+}
+
+#stripe{
+    background: white;
+    height: 30px;
+    text-align: center;
+}
+
+.seleted{
+    color:white;
+    background-color: steelblue;
+}
+
+button{
+    border: none;
+    background-color: white;
+    font-family: "Avenir";
+    text-transform: uppercase;
+    /*this will take the whole stripe*/
+    height: 100%;
+    font-weight:700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size:inherit;
+    transition: all 0.4s;
+}
+
+button:hover{
+    color:white;
+    background-color: steelblue;
+}
+
+#prompt{
+    display: inline-block;
+    width: 20%;
+    color:steelblue;
+    font-weight:700;
+    text-transform: uppercase;
 }

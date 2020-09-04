@@ -8,7 +8,8 @@ This Repo is following Udemy Web Development Bootcamp and doing all the toy proj
     * [Javascript](./Javascript)
     * [DOM](./DOM)
     * (Little Toy Project) [ColorGame Project](./ColorGameProj)
-
+    * [jQuery](./jQuery)
+    * (Little Toy Project) [TodoList Project](./TodoListProj)
 ***
          
          

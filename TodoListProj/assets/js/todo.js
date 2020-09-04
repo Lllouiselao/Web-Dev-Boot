@@ -20,4 +20,14 @@ $("li").click(function(){
     //we could use the object to get rid off two lines
     //("color","grey");
     //$(this).css("textDecoration", "line-through");
-})
+});
+
+//click on X and delte the todo
+$("span").click(function(event){
+    $(this).parent().fadeOut(500,function(){
+        //this is for the parent(li not the span)
+        $(this).remove();
+    });
+    //this event call is for stopping trigger other elemnt outside span
+    event.stopPropagation();
+});
